@@ -68,7 +68,7 @@
     color: white;
     padding: 15px 32px;
     text-align: center;
-    display: inline-block;
+    display: inline-block;  /* another test to see if I can merge branches */
   }
 
 body{
