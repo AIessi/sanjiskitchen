@@ -1,0 +1,48 @@
+.blue {
+	background-color: #0781D4;
+}
+
+.red {
+	background-color: red;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    font-size: 20px;
+    margin: 0;
+    padding: 20px;
+}
+
+#controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#controls input[type="text"],
+#controls button {
+    font-size: 24px;
+}
+
+#clock-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #0781D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease-in-out;
+}
+
+#clock-container.red {
+    background-color: red;
+}
+
+
+#clock{
+    font-size: 36px;
+}
