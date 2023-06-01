@@ -6,56 +6,91 @@ var limit;
 var timer;
 
 function documentLoaded() {
-	"use strict";
+    "use strict";
 
-	// listen for mouse clicks on the button
-	document.getElementById("btnStart").addEventListener("click", botaoClicked, false);
+    // listen for mouse clicks on the clock
+    document.getElementById("clock").addEventListener("click", clockClicked, false);
 
-	console.log("Document uploaded");
+    console.log("Document uploaded");
 }
 
-// when we click on the button, we save the current time, and the time limit. We then
-// create a timer to execute the "updateTime" function once a second.
-function botaoClicked() {
-	"use strict";
+function clockClicked(evt) {
+    // get the clock element and check if it is not in editing mode
+    var clock = document.getElementById("clock");
 
-	startTime = new Date();
+    if (!clock.classList.contains("editing")) {
+        // enter editing mode
+        clock.classList.add("editing");
 
-	limit = parseInt(document.getElementById("txtTempo").value);
+        // create an input element and replace the clock content with it
+        var input = document.createElement("input");
+        input.type = "text";
+        input.value = clock.textContent;
+        input.classList.add("clock-input");
+        clock.textContent = "";
+        clock.appendChild(input);
 
-	clearInterval(timer);
-	timer = setInterval(updateTime, 1000);
+        // set focus on the input element
+        input.focus();
+
+        // listen for Enter key press to start the timer
+        input.addEventListener("keydown", function keydown(evt) {
+            if (evt.key === "Enter") {
+                evt.preventDefault();
+                startTimer();
+            }
+        });
+
+        // listen for focus out event to cancel editing mode if the input loses focus
+        input.addEventListener("focusout", function focusout(evt) {
+            cancelEditing();
+        });
+    }
+}
+
+function cancelEditing() {
+    var clock = document.getElementById("clock");
+    var input = clock.querySelector(".clock-input");
+    clock.textContent = input.value;
+    clock.classList.remove("editing");
+}
+
+function startTimer() {
+    startTime = new Date();
+    limit = parseInt(document.getElementById("txtTempo").value);
+
+    clearInterval(timer);
+    timer = setInterval(updateTime, 1000);
+
+    cancelEditing();
 }
 
 function updateTime() {
-	"use strict";
+    // read the current time
+    var currentTime = new Date();
 
-	// read the current time
-	var currentTime = new Date();
+    // calculate how many seconds passed since the start of the timer
+    var elapsed = (currentTime.getTime() - startTime.getTime()) / 1000;
 
-	// calculate how many seconds passed since the start of the timer
-	var elapsed = (currentTime.getTime() - startTime.getTime()) / 1000;
+    // convert seconds to minutes and seconds (below 60)
+    var minutes = Math.floor(elapsed / 60);
+    var seconds = Math.floor(elapsed % 60);
 
-	// convert seconds to minutes and seconds (below 60)
-	var minutes = Math.floor(elapsed / 60);
-	var seconds = Math.floor(elapsed % 60);
+    // pad with zeroes on the left to look better
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
 
-	// pad with zeroes on the left to look better
-	if (minutes < 10) {
-		minutes = "0" + minutes;
-	}
-	if (seconds < 10) {
-		seconds = "0" + seconds;
-	}
+    // show the elapsed time
+    document.getElementById("clock").innerHTML = minutes + ":" + seconds;
 
-	// show the elapsed time
-	document.getElementById("clock").innerHTML = minutes + ":" + seconds;
-
-	// check if we are above the time limit and set the color of the timer accordingly
-	if (minutes >= limit) {
-		document.getElementById("clock").className = "red";
-	} else {
-		document.getElementById("clock").className = "blue";
-	}
-
+    // check if we are above the time limit and set the color of the timer accordingly
+    if (minutes >= limit) {
+        document.getElementById("clock-container").className = "red";
+    } else {
+        document.getElementById("clock-container").className = "blue";
+    }
 }
