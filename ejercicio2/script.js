@@ -19,7 +19,8 @@ function documentLoaded() {
 
 function startTimer() {
   startTime = new Date();
-  limit = parseInt(document.getElementById("timer").innerHTML);
+  let time = document.getElementById("timer").innerHTML.split(":");
+  limit = parseInt(time[0]) + parseInt(time[1])/60;
 
   clearInterval(timer);
   timer = setInterval(updateTime, 1000);
