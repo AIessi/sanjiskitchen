@@ -5,16 +5,28 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-h1{
-    font-size: 60px;
-    text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.top-container{
+    padding: 200px;
 }
+
+.bottom-half{
+    background-color: rgb(39,43,51);
+    width: max-content;
+}
+
+h1{
+    font-size: 95px;
+    text-align: center;
+    font-weight: 1000;
+    color: rgb(32,35,41);
+}
+
 
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 18px;
+    gap: 0;
+    overflow-x: hidden;
 }
 
 .image-container{
@@ -22,19 +34,50 @@ main {
 }
 
 .image-container img{
-    width: 100%;
+    width: 229.2px;
+    height: 220px;
+    border-radius: 25px;
 }
 
 article{
     padding: 10px;
 }
 
+.character-card{
+    display: flex;
+    margin: 13.5px;
+    background-color: rgb(60,62,68);
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.character-info{
+    display: flex;
+    flex-direction: column;
+    padding: 13.5px;
+    position: relative;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    height: 64.33px;
+    color: rgb(245,245,245);
+}
+
+.greytext{
+    color: rgb(158,158,158);
+}
+
 .navbar {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navbar li {
@@ -47,8 +90,89 @@ article{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: color 0.2s;
 }
 
-.navbar li a:hover {
-    background-color: #ddd;
+.content-links{
+    margin-left: auto;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 750;
+}
+
+.content-links a:hover{
+    color: rgb(255,152,0);
+}
+
+.homebutton{
+    margin-right: auto;
+}
+
+.homebutton img{
+    width: 50px;
+    height: 50px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+  
+.status-dot.grey {
+    background-color: rgb(158,158,158);
+}
+  
+.status-dot.red {
+    background-color: rgb(214,61,46);
+}
+  
+.status-dot.green {
+    background-color: rgb(85,204,68);
+}
+  
+.about-content{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-left: 500px;
+    margin-right: 500px;
+    font-size: 110%;
+    color: rgb(66,66,66);
+}
+
+.abouth2 {
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: rgb(32,35,41);
+}
+
+.abouth3 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(32,35,41);
+}
+
+.ablink {
+    text-decoration-color: rgb(255,152,0);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    color: rgb(66,66,66);
+}
+
+.ablink:hover {
+    text-decoration: none;
+    color: rgb(255,152,0);
+    transition: color 0.2s;
 }

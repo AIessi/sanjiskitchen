@@ -4,74 +4,44 @@
         <title>About</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
-
-        <style>
-            body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-                margin-top: -50px;
-            }
-    
-            article {
-                margin-top: 20px;
-                max-width: 600px;
-                text-align: center;
-            }
-
-            .title {
-                text-align: center;
-                margin-top: 20px;
-                font-size: 32px;
-            }
-
-            .homebutton{
-                    position: absolute;
-                    top: 70px;
-                    left: 70px;
-                }
-        </style>
     </head>
-
     <body>
-        <a href="landing.html" class="homebutton">
-            <img src="RMAPI-homepagebutton.png" alt="home button" width="100px" height="100px">
-        </a>
-        <div class="title">
-            <h2>About</h2>
+        <ul class="navbar">
+            <li class="homebutton"><a href="landing.html"><img src="RMAPI-homepagebutton.png" alt="Home"></a></li>
+            <li class="content-links"><a href="about.html">About</a></li>
+        </ul>
+        <div class="about-content">
+            <article>
+                <h2 class="abouth2">About</h2>
+                <h3 class="abouth3">What is this?</h3>
+                <span>The Rick and Morty API is a REST(ish) and GraphQL API based on the television show <a class="ablink" href="https://www.adultswim.com/videos/rick-and-morty">Rick and Morty</a>. You will have access to about hundreds of characters, images, locations and episodes. The Rick and Morty API is filled with canonical information as seen on the TV show.</span>
+                <br>
+                <br>
+                <a class="ablink" href="https://rickandmortyapi.com/documentation">Check out the documentation to get started </a>
+                <br>
+                <br>
+                <h3 class="abouth3">Who are you?</h3>
+                <span>We are <a class="ablink" href="https://github.com/afuh">Axel Fuhrmann</a>, a guy who likes to develop things and <a class="ablink" href="https://talitatraveler.com/">Talita</a>, the "Rick and Morty data scientist" and hardcore fan.</span>
+                <br>
+                <br>
+                <h3 class="abouth3">Why did you build this?</h3>
+                <span>Because we were really interested in the idea of writing an open source project and also because Rick and Morty is our favorite show at that moment, so why not?</span>
+                <br>
+                <br>
+                <h3 class="abouth3">Technical stuff?</h3>
+                <span>The entire project is hosted on <a class="ablink" href="https://www.digitalocean.com/">Digital Ocean</a> and <a class="ablink" href="https://www.netlify.com/">Netlify</a>. GraphQL cache is handled through <a class="ablink" href="https://stellate.co/">Stellate</a>. We use <a class="ablink" href="https://nodejs.org/en">Node</a> and <a class="ablink" href="https://www.mongodb.com/">MongoDB</a> to serve the API.</span>
+                <br>
+                <br>
+                <h3 class="abouth3">How can I contribute to the project?</h3>
+                <span>You can <a class="ablink" href="https://rickandmortyapi.com/support-us">help us keep the project alive</a> and you can also contribute on <a class="ablink" href="https://github.com/afuh/rick-and-morty-api">GitHub</a>.</span>
+                <br>
+                <br>
+                <h3 class about="h3">Copyright?</h3>
+                <span>Rick and Morty is created by Justin Roiland and Dan Harmon for <a class="ablink" href="https://www.adultswim.com/">Adult Swim</a>. The data and images are used without claim of ownership and belong to their respective owners.</span>
+                <br>
+                <br>
+                <span>This API is open source and used a BSD license.</span>
+            </article>
         </div>
-        <article>
-            <h3>What is this?</h3>
-            <span>The Rick and Morty API is a REST(ish) and GraphQL API based on the television show <a href="https://www.adultswim.com/videos/rick-and-morty">Rick and Morty</a>. You will have access to about hundreds of characters, images, locations and episodes. The Rick and Morty API is filled with canonical information as seen on the TV show.</span>
-            <br>
-            <br>
-            <a href="https://rickandmortyapi.com/documentation">Check out the documentation to get started </a>
-            <br>
-            <br>
-            <h3>Who are you?</h3>
-            <span>We are <a href="https://github.com/afuh">Axel Fuhrmann</a>, a guy who likes to develop things and <a href="https://talitatraveler.com/">Talita</a>, the "Rick and Morty data scientist" and hardcore fan.</span>
-            <br>
-            <br>
-            <h3>Why did you build this?</h3>
-            <span>Because we were really interested in the idea of writing an open source project and also because Rick and Morty is our favorite show at that moment, so why not?</span>
-            <br>
-            <br>
-            <h3>Technical stuff?</h3>
-            <span>The entire project is hosted on <a href="https://www.digitalocean.com/">Digital Ocean</a> and <a href="https://www.netlify.com/">Netlify</a>. GraphQL cache is handled through <a href="https://stellate.co/">Stellate</a>. We use <a href="https://nodejs.org/en">Node</a> and <a href="https://www.mongodb.com/">MongoDB</a> to serve the API.</span>
-            <br>
-            <br>
-            <h3>How can I contribute to the project?</h3>
-            <span>You can <a href="https://rickandmortyapi.com/support-us">help us keep the project alive</a> and you can also contribute on <a href="https://github.com/afuh/rick-and-morty-api">GitHub</a>.</span>
-            <br>
-            <br>
-            <h3>Copyright?</h3>
-            <span>Rick and Morty is created by Justin Roiland and Dan Harmon for <a href="https://www.adultswim.com/">Adult Swim</a>. The data and images are used without claim of ownership and belong to their respective owners.</span>
-            <br>
-            <br>
-            <span>This API is open source and used a BSD license.</span>
-        </article>
     </body>
 </html>
