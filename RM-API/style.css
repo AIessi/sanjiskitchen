@@ -6,12 +6,13 @@
 }
 
 .top-container{
-    padding: 200px;
+    position: relative;
+    height: 350px;
+    padding-bottom: 0;
 }
 
 .showcase {
     background-color: rgb(39,43,51);
-    width: max-content;
 
 }
 
@@ -53,12 +54,15 @@ main {
 .image-container img{
     width: 229.2px;
     height: 220px;
-    border-radius: 25px;
+    border-radius: 25px 0px 0px 25px;
 }
 
+/*
 article{
     padding: 10px;
 }
+
+*/
 
 .character-card{
     display: flex;
@@ -250,3 +254,20 @@ article{
     color: rgb(255,152,0);
     transition: color 0.2s;
 }
+
+.banner {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+  
+
+
+.banner-text{
+    display: flex; 
+    justify-content: center;
+    align-items:center;
+    z-index: 10;
+    position: relative;
+  }
