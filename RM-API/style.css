@@ -7,7 +7,7 @@
 
 .top-container{
     position: relative;
-    height: 350px;
+    height: 475px;
     padding-bottom: 0;
 }
 
@@ -18,8 +18,10 @@
 
 .showcase-inner {
     margin: 0;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .footer { 
@@ -28,7 +30,7 @@
 }
 
 h1{
-    font-size: 95px;
+    font-size: 100px;
     text-align: center;
     font-weight: 1000;
     color: rgb(32,35,41);
@@ -54,7 +56,7 @@ main {
 .image-container img{
     width: 229.2px;
     height: 220px;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 /*
@@ -68,7 +70,7 @@ article{
     display: flex;
     margin: 13.5px;
     background-color: rgb(60,62,68);
-    border-radius: 25px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(37, 37, 37, 0.5);
 }
 
@@ -221,8 +223,8 @@ article{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 10;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .socials a {
@@ -262,7 +264,10 @@ article{
     bottom: 0;
   }
   
-
+  .banner svg {
+    width: 500px; /* Adjust the width as desired */
+    height: auto; /* Adjust the height as desired */
+  }
 
 .banner-text{
     display: flex; 
@@ -270,4 +275,45 @@ article{
     align-items:center;
     z-index: 10;
     position: relative;
+    top: 150px;
   }
+
+.poweredby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.poweredby-icon {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.server-status {
+    display: flex;
+    align-items: center;
+    text-justify: center;
+    justify-content: center;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.server-status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: rgb(85,204,68);
+    margin-left: 10px;
+}
+
+.status-link {
+    text-decoration: none;
+    color: rgb(158, 158, 158);
+}
+
+.status-link:hover {
+    color: rgb(255,152,0);
+    transition: color 0.2s;
+}
