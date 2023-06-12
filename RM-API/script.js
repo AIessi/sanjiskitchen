@@ -18,7 +18,7 @@ const renderCharacterHTML = (character, episode) => `
     </div>
     <div class="character-info">
       <div class="section">
-        <h2>${character.name}</h2>
+        <h2 class="orangefy">${character.name}</h2>
         <div class="status">
           <span class="status-dot ${getStatusColor(character.status)}"></span>
           <span class="status">${character.status} - ${character.species}</span>
@@ -26,11 +26,11 @@ const renderCharacterHTML = (character, episode) => `
       </div>
       <div class="section">
         <span class="greytext">Last known location:</span>
-        <span>${character.location.name}</span>
+        <span class="orangefy">${character.location.name}</span>
       </div>
       <div class="section">
         <span class="greytext">First seen in:</span>
-        <span>${episode.name}</span>
+        <span class="orangefy">${episode.name}</span>
       </div>
     </div>
   </article>

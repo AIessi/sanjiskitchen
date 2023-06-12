@@ -7,7 +7,7 @@
 
 .top-container{
     position: relative;
-    height: 475px;
+    height: 465px;
     padding-bottom: 0;
 }
 
@@ -20,13 +20,14 @@
     margin: 0;
     padding-top: 80px;
     padding-bottom: 80px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .footer { 
     background-color: rgb(32,35,41);
-    padding-top: 30px;
+    padding-top: 50px;
+    padding-bottom: 21px;
 }
 
 h1{
@@ -59,12 +60,12 @@ main {
     border-radius: 10px 0px 0px 10px;
 }
 
-/*
+
 article{
-    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-*/
 
 .character-card{
     display: flex;
@@ -169,7 +170,7 @@ article{
     display: flex;
     flex-direction: column;
     padding: 5px;
-    padding-bottom: 20px;
+    padding-bottom: 100px;
     margin-left: 500px;
     margin-right: 500px;
     font-size: 110%;
@@ -210,7 +211,7 @@ article{
     list-style: none;
     padding-top: 40px;
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 750;
     color: rgb(158, 158, 158);
 }
@@ -223,12 +224,12 @@ article{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .socials a {
-    margin: 10px;
+    margin: 14px;
 }
 
 .socials a:hover svg path {
@@ -238,6 +239,7 @@ article{
 .sign {
     color: rgb(158, 158, 158);
     text-align: center;
+    font-size: 13px;
     padding-top: 15px;
     padding-bottom: 50px;
 }
@@ -265,8 +267,8 @@ article{
   }
   
   .banner svg {
-    width: 500px; /* Adjust the width as desired */
-    height: auto; /* Adjust the height as desired */
+    width: 480px; 
+    height: auto;
   }
 
 .banner-text{
@@ -283,11 +285,12 @@ article{
     justify-content: center;
     align-items: center;
     padding: 20px;
+    padding-top: 30px;
 }
 
 .poweredby-icon {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
 .server-status {
@@ -296,6 +299,7 @@ article{
     text-justify: center;
     justify-content: center;
     font-weight: 700;
+    font-size: 14px;
     padding-top: 10px;
 }
 
@@ -317,3 +321,9 @@ article{
     color: rgb(255,152,0);
     transition: color 0.2s;
 }
+
+.orangefy:hover {
+    color: rgb(255,152,0);
+
+}
+
