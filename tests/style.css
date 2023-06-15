@@ -1,3 +1,24 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 0.5rem;
+  outline: 1px solid red;
+  justify-content: center;
+}
+
+.container>div {
+  width: 100%;
+  background-color: gray;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/*
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -8,3 +29,4 @@
     background-color: #eaeaea;
     padding: 20px;
   }
+*/
