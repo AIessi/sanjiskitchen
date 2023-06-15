@@ -43,12 +43,14 @@ h2{
 
 
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(589.19px, auto));
-    gap: 0;
-    overflow-x: hidden;
-    justify-items: center;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;    
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
 }
 
 .image-container{
@@ -61,12 +63,9 @@ main {
     border-radius: 10px 0px 0px 10px;     
 }
 
-
 article{
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: auto;
 }
-
 
 .character-card{ 
     display: flex;
