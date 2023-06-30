@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { FormEvent, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import Container from "./components/Container";
+import Input from "./components/Input";
+import Summary from "./components/Summary/Summary";
+import Tasks from "./components/Tasks/Tasks";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export interface Task {
+  name: string;
+  done: boolean;
+  id: string;
 }
 
-export default App
+function App() {
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>, value: string) => {
+    e.preventDefault();
+    const newTask = {
+      name: value,
+      done: false,
+      id: uuidv4(),
+    };
+    setTasks((tasks) => [...tasks, newTask]);
+  };
+
+  const toggleDoneTask = (id: string, done: boolean) => {
+    setTasks((tasks) =>
+      tasks.map((t) => {
+        if (t.id === id) {
+          t.done = done;
+        }
+        return t;
+      })
+    );
+  };
+
+  const handleDeleteTask = (id: string) => {
+    setTasks((tasks) => tasks.filter((t) => t.id !== id));
+  };
+
+  return (
+    <div className="flex justify-center m-5">
+      <div className="flex flex-col items-center">
+        <div className="border shadow p-10 flex flex-col gap-10 sm:w-[640px]">
+          <Container title={"Summary"}>
+            <Summary tasks={tasks} />
+          </Container>
+          <Container>
+            <Input handleSubmit={handleSubmit} />
+          </Container>
+          <Container title={"Tasks"}>
+            <Tasks
+              tasks={tasks}
+              toggleDone={toggleDoneTask}
+              handleDelete={handleDeleteTask}
+            />
+          </Container>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
