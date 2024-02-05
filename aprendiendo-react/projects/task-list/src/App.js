@@ -27,11 +27,11 @@ function FormTask({ addTask }) {
     if (!value) return;
     addTask(value);
     setValue("");
-  };
+  }; 
 
   return (
-    <Form onSubmit={handleSubmit}> 
-    <Form.Group>
+    <Form onSubmit={handleSubmit}>         
+    <Form.Group> 
       <Form.Label><b>Add Task</b></Form.Label>
       <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new task" />
     </Form.Group>
@@ -45,7 +45,7 @@ function FormTask({ addTask }) {
 function App() {
   const [tasks, setTasks] = React.useState([
     {
-      text: "This is a sampe task",
+      text: "This is a sample task",
       isDone: false
     }
   ]);
